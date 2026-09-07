@@ -410,8 +410,25 @@ Differences in cryptographic construction and lattice parameters among
 the compared schemes should therefore be considered together with the
 reported operation counts and security assumptions.
 
+15. SUMO-Based Adversarial Evaluation
+  The following Python program and CSV output files are used to evaluate ATPRV under replay, false-data injection (FDI), Sybil, trust-manipulation, and mixed attacks. The evaluation also examines malicious-vehicle ratios from 10% to 50%.
+  ATPRV_SUMO_All_Attacks.py
+  1. ATPRV_attackwise_summary.csv
+   - Contains attack-wise results for Replay, False-Data Injection,
+     Sybil, Trust Manipulation, and Mixed attacks.
+   - Reports Detection Rate, FAR, FRR, and RTR.
 
-15. NOTE FOR REPRODUCIBILITY
+2. ATPRV_ratio_sweep_summary.csv
+   - Contains results for varying malicious-vehicle ratios:
+     10%, 20%, 30%, 40%, and 50%.
+   - Reports Detection Rate, FAR, FRR, and RTR for each ratio.
+
+3. ATPRV_attack_event_log.csv
+   - Contains detailed vehicle-level/event-level simulation records.
+   - Includes attack type, vehicle identity, B, M, C, H metrics,
+     trust score, risk score, preliminary decision, reverification,
+     and final authentication decision.
+16. NOTE FOR REPRODUCIBILITY
 ============================
 
 The supplied source files are supplementary research implementations
